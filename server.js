@@ -3,6 +3,9 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+// process.env => an object that stores all of our environment variable as a key value pairs
+const port = process.env.PORT || 3000;
+
 // 2, making new express app
 var app = express();
 
@@ -100,7 +103,7 @@ app.get('/bad',(req,res) => {
     });
 });
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
     // this function is optional*
-    console.log('Server is running on port 3000');
+    console.log(`Server is running on port ${port}`);
 });
