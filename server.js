@@ -35,9 +35,9 @@ app.use((req,res,next)=> {
     next();
 });
 
-app.use((req,res,next)=>{
-    res.render('maintenance.hbs');
-});
+// app.use((req,res,next)=>{
+//     res.render('maintenance.hbs');
+// });
 
 // app.use -> takes the middleware function you wanna use
 app.use(express.static(__dirname + '/public'));
@@ -94,6 +94,13 @@ app.get('/about', (req,res) => {
         pageTitle: 'About Page',
         welcome: 'some text here'
         //currentYear: new Date().getFullYear()
+    });
+});
+
+app.get('/projects', (req,res) => {
+    res.render('projects.hbs',{
+        pageTitle: 'Projects Page',
+        welcome: 'welcome projects page'
     });
 });
 
